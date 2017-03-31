@@ -33,13 +33,17 @@ namespace web
             //判断表中是否存在数据，如果有数据则登录成功，如果没有数据，则登录失败
             if (ds.Tables[0].Rows.Count > 0)
             {
-                //根据判断选择进入哪个主页
+                //根据判断选择进入哪个主页,无论进来的管理员或者是普通用户都记录下操作者的ID，方便记录日志
                 if (ds.Tables[0].Rows[0]["usertype"].ToString() == "管理员")
                 {
+                    Session["id"] = ds.Tables[0].Rows[0]["id"].ToString();
+                    Session["username"] = ds.Tables[0].Rows[0]["username"].ToString();
                     Response.Redirect("AdministratorIndex.aspx");
                 }
                 else
                 {
+                    Session["id"] = ds.Tables[0].Rows[0]["id"].ToString();
+                    Session["username"] = ds.Tables[0].Rows[0]["username"].ToString();
                     Response.Redirect("CustomerIndex.aspx");
                 }
             }
