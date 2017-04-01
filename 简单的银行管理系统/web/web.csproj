@@ -59,6 +59,7 @@
     <Content Include="bin\RL.DBUtility.dll" />
     <Content Include="CustomerIndex.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="LogPage.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogPage.aspx.cs">
+      <DependentUpon>LogPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogPage.aspx.designer.cs">
+      <DependentUpon>LogPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DrawMoneyHandler.ashx.cs">

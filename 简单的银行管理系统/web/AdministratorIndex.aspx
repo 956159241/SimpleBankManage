@@ -23,17 +23,29 @@
          }
     </script>
     <style type="text/css">
+        *{margin:5px;padding:5px;}
         #lbCardM,#lbUserM{ cursor:pointer;}
-        .cardMInfo{}
+        body{background-color:#646464;}
+        .my_login{width:800px;margin:100px auto;color:White}
+        #buttonLogin{display: inline-block;outline: none;cursor: pointer;text-align: center;
+	                 text-decoration: none;font: 14px/100% Arial, Helvetica, sans-serif;padding: .5em 2em .5em;
+	                 text-shadow: 0 1px 1px rgba(0,0,0,.3);-webkit-border-radius: .5em; -moz-border-radius: .5em;
+	                 border-radius: 0em;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	                 box-shadow: 0 1px 2px rgba(0,0,0,.2);margin-left:120px;}
+	    a{color:white;}
+	    a:visited{color:White;}
+	    #txtUserID,#txtUserName,#txtCNumber{height:20px;padding:0px;margin:0px;width:80px;}
+        
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div class="my_login">
         <%--顶部的选项卡指示--%>
         <asp:Label ID="lbUserM" runat="server" Text="用户信息管理" onmouseover = "showUser()"></asp:Label>
         <asp:Label ID="lbCardM" runat="server" Text="银行卡信息管理" onmouseover = "showCard()"></asp:Label>
         <a href="UserEdit.aspx">新增用户</a>
+        <a href="LogPage.aspx">查看日志</a>
         <br/>
         <%--用户信息--%>
         <div class="userMInfo">

@@ -90,7 +90,7 @@ namespace web
             string ip = HttpContext.Current.Request.UserHostAddress;
             StringBuilder sblog = new StringBuilder();
             sblog.AppendLine("INSERT INTO Log(logtype,ruserid,username,details,ip)");
-            sblog.AppendLine("VALUES('取钱',@ruserid,@username,@details,@ip)");
+            sblog.AppendLine("VALUES('转账',@ruserid,@username,@details,@ip)");
             SqlParameter[] pmslog = {
                                     new SqlParameter("@ruserid",SqlDbType.Int),
                                     new SqlParameter("@username",SqlDbType.NVarChar,50),

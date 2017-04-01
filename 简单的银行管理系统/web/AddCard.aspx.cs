@@ -13,23 +13,24 @@ namespace web
 {
     public partial class AddCard : System.Web.UI.Page
     {
-        private int uId = 0;
+        //private int uId = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString.AllKeys.Contains("uid"))
-            {
-                uId = int.Parse(Request.QueryString["uid"]);
-            }
+            //if (Request.QueryString.AllKeys.Contains("uid"))
+            //{
+            //    uId = int.Parse(Request.QueryString["uid"]);
+            //}
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
             //uId = int.Parse(Request.QueryString["uid"]);
-            if (uId != 0)
-            {
+            //if (uId != 0)
+            //{
                 string number = txtCNmuber.Text;
                 string pass = txtPassword.Text;
                 string balance = txtBalance.Text;
+                int uId = Convert.ToInt32(txtUserId.Text);
                 StringBuilder sbsql = new StringBuilder();
                 sbsql.AppendLine("INSERT INTO BankAccount(userid,cnumber,cpassword,balance,islost) ");
                 sbsql.AppendLine("VALUES (@userid,@cnumber,@cpassword,@balance,'false');");
@@ -45,7 +46,7 @@ namespace web
                 pms[3].Value = balance;
                 DbHelperSQL.ExecuteSql(sbsql.ToString(), pms);
                 Response.Redirect("UserCardInfo.aspx");
-            }
+            //}
         }
     }
 }

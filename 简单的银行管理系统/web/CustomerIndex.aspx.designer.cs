@@ -40,6 +40,33 @@ namespace web {
         protected global::System.Web.UI.WebControls.DropDownList ddlCNumber;
         
         /// <summary>
+        /// lbSave 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbSave;
+        
+        /// <summary>
+        /// lbDraw 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbDraw;
+        
+        /// <summary>
+        /// lbTrans 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTrans;
+        
+        /// <summary>
         /// ScriptManager1 控件。
         /// </summary>
         /// <remarks>

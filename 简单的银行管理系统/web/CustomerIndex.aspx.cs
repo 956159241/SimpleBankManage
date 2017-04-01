@@ -43,11 +43,15 @@ namespace web
             ds.Tables[0].Rows.InsertAt(drNew, 0);//将新增的一行添加到ds中
             ddlCNumber.DataBind();
         }
-
+        //存钱并记录日志
         protected void btnSaveMoney_Click(object sender, EventArgs e)
         {
             string cnumber = ddlCNumber.SelectedItem.ToString();
-            Double money = Convert.ToDouble(txtSaveMoney.Text);
+            Double money = 0;
+            if (txtSaveMoney.Text != "")
+            {
+                money = Convert.ToDouble(txtSaveMoney.Text);
+            }
             string sqlUpdate = "UPDATE BankAccount SET balance = balance + @money WHERE cnumber = @cnumber";
             SqlParameter[] pmsUpdate = { 
                                         new SqlParameter("@money",SqlDbType.Money),
@@ -84,27 +88,8 @@ namespace web
             pms[2].Value = "存入：" + money + "元";
             pms[3].Value = ip;
             DbHelperSQL.ExecuteSql(sblog.ToString(), pms);
-
-
-
-
             Response.Redirect("CustomerIndex.aspx");
+            //Response.Write("<script type='text/javascript'>alert('存款成功');</script>");
         }
-
-        //protected void btnTransMoney_Click(object sender, EventArgs e)
-        //{
-        //    string cnumber = ddlCNumber.SelectedItem.ToString();
-        //    string otherCard = Convert.ToString(txtOtherCard.Text);
-        //    Double transMoney = Convert.ToDouble(txtTransMoney);
-        //    //减少本金
-        //    string sqlUpdate = "UPDATE BankAccount SET balance = balance - @transMoney WHERE cnumber = @cnumber";
-        //    SqlParameter[] pmsUpdate = { 
-        //                                new SqlParameter("@transMoney",SqlDbType.Money),
-        //                                new SqlParameter("@cnumber",SqlDbType.NVarChar,30)
-        //                             };
-        //    pmsUpdate[0].Value = transMoney;
-        //    pmsUpdate[1].Value = cnumber;
-        //    DbHelperSQL.ExecuteSql(sqlUpdate, pmsUpdate);
-        //}
     }
 }
